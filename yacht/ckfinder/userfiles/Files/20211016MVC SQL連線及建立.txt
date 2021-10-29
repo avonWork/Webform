@@ -1,0 +1,52 @@
+1.新增三個資料夾
+MVC
+
+2.新增 Model資料夾底下,加入 新增項目,點資料選項,ado.net(資料庫)
+  	/// <summary>
+        /// 建立資料表
+        /// </summary>
+        public virtual DbSet<CreateDB> CreateDbs { get; set;}
+
+
+3.新增 Model資料夾,加入 類別檔,(資料表名稱)
+
+        //設定主KEY
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        public int ID { get; set; }
+
+        [Required]//必填
+        [Display(Name = "顧客名稱")]//顯示給後端人員觀看
+        public string Name { get; set; }
+
+        [Required]//必填
+        [Display(Name = "顧客密碼")]
+        [StringLength(50, ErrorMessage = "請輸入密碼", MinimumLength = 6)]
+        public string password { get; set; }
+
+        [Required]//必填
+        [Display(Name = "顧客電話號碼")]
+        [StringLength(50, ErrorMessage = "請輸入電話號碼", MinimumLength = 9)]
+        public string tel { get; set; }
+
+        [Required]//必填
+        [Display(Name = "顧客Email")]
+        [StringLength(30, ErrorMessage = "請輸入Email")]
+        [EmailAddress(ErrorMessage = "非Email格式")]
+        public string email { get; set; }
+
+
+4.指令(nuget 套件管理器主控台)
+
+4.1 啟動： Enable-Migrations(每個專案只要啟用一次)
+
+4.2顯示異動內容： Add-Migration 本次異動項目
+
+4.3更新資料庫： Update-Database(離線可用這個)
+（使用SQL指令： Update-Database –Script ）(遠端專題用)
+
+5.控制器 需要view才用
+
+
+

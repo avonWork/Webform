@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="font.master.cs" Inherits="yacht.font" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tayana | Tayana Yachts Official Website
+    </title>
+    <script type="text/javascript" src="font/Scripts/jquery.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="font/css/homestyle.css" rel="stylesheet" type="text/css" />
+    <link href="font/css/reset.css" rel="stylesheet" type="text/css" />
+    <%--  --%>
+    <script type="text/jscript" src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script type="text/jscript" src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script type="text/jscript" src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <style type="text/css">
+        .error {
+            color: red;
+        }
+    </style>
+    <%--  --%>
+    <script type="text/javascript">
+        $().ready(function () {
+            // 在键盘按下并释放及提交后验证提交表单
+            $("#form1").validate({
+                rules: {
+                    ctl00$ContentPlaceHolder1$phone: {
+                        required: true,
+                        minlength: 7
+                    },
+                    ctl00$ContentPlaceHolder1$comments: {
+                        required: true,
+                        maxlength: 200,
+                    },
+                    ctl00$ContentPlaceHolder1$email: {
+                        required: true,
+                        email: true
+                    },
+                    ctl00$ContentPlaceHolder1$fontcountry: "required",
+                    ctl00$ContentPlaceHolder1$fontyacht: "required",
+                    ctl00$ContentPlaceHolder1$name: "required"
+                },
+                messages: {
+                    ctl00$ContentPlaceHolder1$phone: {
+                        required: "*請輸入電話",
+                        minlength: "電話必需7個數字以上"
+                    },
+                    ctl00$ContentPlaceHolder1$comments: {
+                        required: "*請輸入內容(限制200字)",
+                        maxlength: "內容請小於200字",
+                    },
+                    ctl00$ContentPlaceHolder1$email: "*請輸入正確的email",
+                    ctl00$ContentPlaceHolder1$fontcountry: "*請選擇國家",
+                    ctl00$ContentPlaceHolder1$fontyacht: "*請選擇遊艇",
+                    ctl00$ContentPlaceHolder1$name: "*請輸入名字"
+                }
+            });
+        });
+    </script>
+    <link href="UserControl/pagination.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="contain">
+            <div class="sub">
+                <p>
+                    <a href="index.aspx">Home</a>
+                </p>
+            </div>
+            <!--------------------------------選單開始---------------------------------------------------->
+            <div id="logol">
+                <a href="index.aspx">
+                    <img src="font/images/logo001.gif" alt="Tayana" /></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li class="menuli01"><a href="fontYachts_overview.aspx">Yachts</a></li>
+                    <li class="menuli02"><a href="fontNews.aspx">NEWS</a></li>
+                    <li class="menuli03"><a href="fontCompany_About Us.aspx">COMPANY</a></li>
+                    <li class="menuli04"><a href="fontDealers.aspx">DEALERS</a></li>
+                    <li class="menuli05"><a href="fontContact.aspx">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <!--------------------------------選單開始結束---------------------------------------------------->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+
+                <!--遮罩-->
+                <%--            <div class="bannermasks">
+                <img src="font/images/company.jpg" alt="&quot;&quot;" width="967" height="371" />
+            </div>--%>
+                <!--遮罩結束-->
+                <!--<div id="buttom01"><a href="#"><img src="images/buttom01.gif" alt="next" /></a></div>-->
+
+                <!--小圖開始-->
+                <!--<div class="bannerimg">
+<ul>
+<li> <a href="#"><div class="on"><p class="bannerimg_p"><img  src="images/pit003.jpg" alt="&quot;&quot;" /></p></div></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" width="300" /></p>
+</a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+</ul>
+
+<ul>
+<li> <a class="on" href="#"><p class="bannerimg_p"><img  src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <p class="bannerimg_p"><a href="#"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+<li> <a href="#"><p class="bannerimg_p"><img src="images/pit003.jpg" alt="&quot;&quot;" /></p></a></li>
+</ul>
+</div>-->
+                <!--小圖結束-->
+
+                <!--<div id="buttom02"> <a href="#"><img src="images/buttom02.gif" alt="next" /></a></div>-->
+
+                <!--------------------------------換圖開始---------------------------------------------------->
+
+                <%--            <div class="banner">
+                <ul>
+                    <li>
+                        <img src="font/images/newbanner.jpg" alt="Tayana Yachts" /></li>
+                </ul>
+            </div>--%>
+            </asp:ContentPlaceHolder>
+            <!--------------------------------換圖結束---------------------------------------------------->
+
+            <div class="conbg">
+                <!--------------------------------左邊選單開始---------------------------------------------------->
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+
+                <!--------------------------------左邊選單結束---------------------------------------------------->
+
+                <!--------------------------------右邊選單開始---------------------------------------------------->
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <!--------------------------------右邊選單結束---------------------------------------------------->
+            </div>
+            <!--------------------------------落款開始---------------------------------------------------->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--------------------------------落款結束---------------------------------------------------->
+        </div>
+    </form>
+</body>
+</html>
