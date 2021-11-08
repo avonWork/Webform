@@ -50,14 +50,14 @@ namespace yacht.bank
         protected void ddlcountry_SelectedIndexChanged(object sender, EventArgs e)
         {
             //把國家 Session儲存起來
-            Session["ddlcountry"] = ddlcountry.SelectedValue;
+            Session["ddlcountry_area"] = ddlcountry.SelectedValue;
             ShowArealist();
         }
 
         private void ShowArealist()
         {
             //session賦值
-            string countryid = (string)Session["ddlcountry"];
+            string countryid = (string)Session["ddlcountry_area"];
             Repeater1.DataSource = dBhelper.SelectAreaList(countryid);
             Repeater1.DataBind();
         }
@@ -70,7 +70,7 @@ namespace yacht.bank
         protected void Button1_Click(object sender, EventArgs e)
         {
             //session賦值
-            string countryid = (string)Session["ddlcountry"];
+            string countryid = (string)Session["ddlcountry_area"];
             string area = addArea.Text;
             //取得UserData
             string strUserData =
@@ -118,7 +118,7 @@ namespace yacht.bank
                 this.DeleteRepeater(areaid);
             }
             //重新綁定控件上的內容
-            string countryid = (string)Session["ddlcountry"];
+            string countryid = (string)Session["ddlcountry_area"];
             ShowArealist();
         }
 

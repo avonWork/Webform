@@ -54,9 +54,9 @@ namespace yacht.bank
 
                 LoadCountry();
                 ddlcountry.SelectedIndex = ddlcountry.Items.IndexOf(ddlcountry.Items.FindByValue(reader["國家id"].ToString()));
-
                 LoadArea();
                 ddlarea.SelectedIndex = ddlarea.Items.IndexOf(ddlarea.Items.FindByValue(reader["地區id"].ToString()));
+                Session["updateArea"] = reader["地區id"];
                 //TextBox
                 editAgent.Text = reader["agent"].ToString();
                 editContact.Text = reader["contact"].ToString();
@@ -178,7 +178,10 @@ namespace yacht.bank
                 {
                     dBhelper.UpdateAgent(id, areaid, editagent, editcontact, edittel, pic, editfax, editaddress, editemail, editAdtime, adMypersonId, dotStirng);
                     string page = Request.QueryString["page"];
-                    Session["ddlcountry"] = null;
+                    if (areaid != Session["updateArea"].ToString())
+                    {
+                        Session["ddlcountry"] = null;
+                    }
                     //Session["ddlarea"] = null;
                     Response.Redirect("bank_agentList.aspx?page=" + page);
                 }
