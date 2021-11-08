@@ -179,7 +179,7 @@ namespace yacht.bank
                     dBhelper.UpdateAgent(id, areaid, editagent, editcontact, edittel, pic, editfax, editaddress, editemail, editAdtime, adMypersonId, dotStirng);
                     string page = Request.QueryString["page"];
                     Session["ddlcountry"] = null;
-                    Session["ddlarea"] = null;
+                    //Session["ddlarea"] = null;
                     Response.Redirect("bank_agentList.aspx?page=" + page);
                 }
                 else

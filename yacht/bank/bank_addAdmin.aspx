@@ -25,7 +25,7 @@
                 reader.onload = function (evt) {
                     picviewDiv.innerHTML = '<img class="img1" src="' + evt.target.result + '" />';
                 }
-                reader.readAsDataURL(file.files[0]);
+                reader.readAsDataURL.(filefiles[0]);
             }
             else {
                 picviewDiv.innerHTML = '<div class="img1" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';

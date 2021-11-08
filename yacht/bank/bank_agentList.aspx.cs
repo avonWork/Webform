@@ -223,12 +223,12 @@ namespace yacht.bank
             //show
             if (Session["ddlcountry"] != null && Session["ddlarea"] == null)
             {
-                //Response.Redirect("bank_agentList.aspx");
+                Response.Redirect("bank_agentList.aspx");
                 showall();
             }
             else
             {
-                //Response.Redirect("bank_agentList.aspx");
+                Response.Redirect("bank_agentList.aspx");
                 showPage();
             }
         }
